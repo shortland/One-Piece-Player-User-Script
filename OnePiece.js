@@ -64,12 +64,16 @@
     */
     setTimeout(function() { window.scrollTo(0,document.body.scrollHeight); }, 5000);
     /*
-        check if 2 min to next vid, autoplay
+        check if 100 sec to next vid, autoplay
     */
     (function checkForPlay() {
-        if (player.currentTime + 120 > player.duration) {
+        if (player.currentTime + 100 > player.duration) {
             window.location.href = localStorage.getItem('host') + localStorage.getItem('next');
         }
         setTimeout(function() { checkForPlay(); }, 10000);
     })();
+    /*
+        onclick vid play pause
+    */
+    document.getElementById('thisMyVideo').setAttribute("onclick", "if(this.paused){this.play()}else{this.pause();}");
 })();
