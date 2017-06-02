@@ -76,4 +76,24 @@
         onclick vid play pause
     */
     document.getElementById('thisMyVideo').setAttribute("onclick", "if(this.paused){this.play()}else{this.pause();}");
+    /*
+        somehow make this better? if existingly fullscreen, set as fullscreen on page load
+    */
+    //document.getElementById('thisMyVideo').requestFullScreen();
+    /*
+        skip 10 sec
+    */
+    var rew10 = document.createElement("button");
+    rew10.id = "rew10";
+    rew10.innerHTML = "<<10s";
+    document.body.appendChild(rew10);
+    document.getElementById('rew10').setAttribute("onclick", "document.getElementById('thisMyVideo').currentTime -= 10;");
+    /*
+        skip 10 sec
+    */
+    var skip10 = document.createElement("button");
+    skip10.id = "skip10";
+    skip10.innerHTML = "10s>>";
+    document.body.appendChild(skip10);
+    document.getElementById('skip10').setAttribute("onclick", "document.getElementById('thisMyVideo').currentTime += 10;");
 })();
